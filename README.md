@@ -1,6 +1,4 @@
-Of course\! Here is a detailed README file for your project.
 
------
 
 # Gemini Clone - Conversational AI Chat Application
 
