@@ -1,0 +1,188 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-secondary);
+  padding: 1rem;
+}
+.themeToggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  z-index: 10; /* Ensures it's above other elements */
+}
+
+.themeToggle:hover {
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.loginBox {
+  background-color: var(--background-primary);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px var(--shadow-color);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  padding: 1rem;
+  background-color: var(--background-secondary);
+  border-radius: 50%;
+  color: var(--text-accent);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Proper spacing between form elements */
+}
+
+.phoneInputContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.countrySelect {
+  width: 35%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg ... %3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+   height: 40px; /* --- ADD THIS LINE to match the input --- */
+  box-sizing: border-box;
+}
+
+
+.phoneInputContainer input {
+  flex-grow: 1;
+}
+
+.countrySelect:focus,
+.phoneInputContainer input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+.errorText {
+  color: var(--accent-danger);
+  font-size: 0.875rem;
+  text-align: left;
+  margin-top: -0.5rem;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* --- ADD THIS ENTIRE BLOCK TO THE END OF YOUR CSS FILE --- */
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 600px) {
+  .container {
+    /* Allow the login box to be flush with the screen edges */
+    padding: 0;
+  }
+
+  .loginBox {
+    /* Remove box-shadow and border-radius to make it feel more native */
+    box-shadow: none;
+    border-radius: 0;
+    
+    /* Ensure it takes up the full screen height on mobile */
+    min-height: 100vh;
+    
+    /* Adjust padding for smaller screens */
+    padding: 3rem 1.5rem;
+    
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    /* Decrease title font size */
+    font-size: 1.75rem;
+  }
+
+  .phoneInputContainer {
+    /* Stack the country code and phone number vertically */
+    flex-direction: column;
+  }
+
+  .countrySelect {
+    /* Make the dropdown full-width */
+    width: 100%;
+    
+    /* Increase height for better touch-friendliness */
+    height: 48px; 
+  }
+
+  .phoneInputContainer input {
+    /* Ensure the input is also full-width and has a matching height */
+    width: 100%;
+    height: 48px;
+  }
+}
+.iconWrapper {
+  /* --- NEW: Force a perfect square shape --- */
+  width: 64px;
+  height: 64px;
+
+  /* --- CHANGED: Use flexbox for perfect centering --- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Center the circle itself within the login box */
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--background-secondary);
+  border-radius: 50%; /* This now creates a perfect circle */
+  color: var(--text-accent);
+  margin-bottom: 1rem;
+}

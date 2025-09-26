@@ -1,0 +1,71 @@
+.messageWrapper {
+  display: flex;
+  margin-bottom: 1rem;
+  max-width: 75%;
+}
+
+.messageWrapper.user {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.messageWrapper.ai {
+  margin-right: auto;
+}
+
+.messageBubble {
+  /* --- THE FIX --- */
+  /* We increase the right-side padding to make space for the copy button. */
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  
+  border-radius: 18px;
+  position: relative; /* This is crucial */
+  min-width: 80px;
+}
+
+.messageWrapper.user .messageBubble {
+  background-color: var(--user-message-bg);
+  border-bottom-right-radius: 4px;
+}
+
+.messageWrapper.ai .messageBubble {
+  background-color: var(--ai-message-bg);
+  border-bottom-left-radius: 4px;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.copyButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.messageBubble:hover .copyButton {
+  opacity: 1;
+}
+
+.copyButton:hover {
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
